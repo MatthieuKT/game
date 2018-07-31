@@ -7,7 +7,11 @@ height : 100%;
 body {
   background-color: black !important;
 }
+.bloc {
+  display: none;
+}
 #bckgrndImg {
+  width: 1225px;
   margin-top: 9%;
 }
 /* contient l'image de fond */
