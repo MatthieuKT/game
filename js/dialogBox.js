@@ -5,7 +5,7 @@ var nextElt = document.getElementById('next');
 // permet de situer l'index du texte
 var index = 0;
 
-ajaxGet("http://localhost/Game/data/scenario.json", function (reponse) {
+ajaxGet("http://localhost/game/data/scenario.json", function (reponse) {
   var scenario = JSON.parse(reponse);
 
   dialogElt.innerHTML = scenario.chapitre1[index].texte;

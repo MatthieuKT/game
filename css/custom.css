@@ -1,5 +1,46 @@
+/* Permettra d'avoir une div qui prendra toute la page */
+html, body {
+padding : 0;
+margin : 0;
+height : 100%;
+}
 body {
-  background-image: url('../images/jour.jpg');
+  background-color: black !important;
+}
+#bckgrndImg {
+  margin-top: 9%;
+}
+/* contient l'image de fond */
+/* #background {
+  z-index: -5;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+} */
+/* contient le texte d'intro */
+#intro {
+  font-size: 25px;
+  padding: 35px;
+  color: white;
+  position: absolute;
+  top:14%;
+  left: 25%;
+  width: 50%;
+  height: 69%;
+}
+#filtreIntro {
+  position: absolute;
+  top:14%;
+  left: 25%;
+  background-color: black;
+  opacity: 0.85;
+  width: 50%;
+  height: 69%;
+}
+#arrow {
+  margin-left: 1em;
+  width: 25px;
+  height: 30px;
 }
 
 #character {

@@ -1,0 +1,14 @@
+{
+  "intro" : [
+    { "id" : 1,
+      "perso" : "off",
+      "texte" : "<h2>21 aout 1019</h2>Cela fait deux mois que le virus H-15 a fait son apparition aux Etats Unis. <br> <br> Une étrange maladie attaquant le système nerveux qui peu a peu laisse ses victimes inanimées. Sortie de nulle part, elle s'est largement propagé à travers tout le continent.<br> <br> Les hopitaux ont été rapidement débordés de personnes contaminées par ce nouveau virus, les services publics, les banques, l'armée, tous les secteurs ont été touchés et paralysés, personne n'était en mesure de prévoir une chute aussi rapide du système.",
+      "date" : ""
+    },
+    { "id" : 2,
+      "perso" : "off",
+      "texte" : "<br><br>Depuis, plus aucun vol entre eux et le reste du monde, plus aucune importation. Le réseau Internet américain reste muet, les médias n'émettent plus, personne ne sait ce qu'il se passe désormais là bas.<br><br>A présent, les retombées économiques se font ressentir dans notre pays.<br><br>Et les nouvelles sont plutôt inquiétantes.",
+      "date" : ""
+    }
+  ]
+}
