@@ -7,6 +7,7 @@ height : 100%;
 body {
   background-color: black !important;
 }
+/* ON le fait disparaitre pour y apporter les effetsUX d'apparition */
 .bloc {
   display: none;
 }
@@ -28,18 +29,14 @@ body {
   color: white;
   position: absolute;
   top:14%;
-  left: 25%;
-  width: 50%;
-  height: 69%;
 }
 #filtreIntro {
   position: absolute;
   top:14%;
-  left: 25%;
   background-color: black;
   opacity: 0.85;
   width: 50%;
-  height: 69%;
+  height: 90%;
 }
 #arrow {
   margin-left: 1em;
@@ -84,4 +81,7 @@ body {
   position: absolute;
   right: 1%;
   bottom: 55px;
+}
+#ambiance {
+  visibility: hidden;
 }

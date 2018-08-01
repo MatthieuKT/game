@@ -2,7 +2,7 @@
   "chapitre1" : [
     { "id" : 1,
       "perso" : "off",
-      "texte" : "Hé Hornet c'est quoi ton prénom au fait? jle connais même pas.... ",
+      "texte" : "",
       "date" : ""
     },
     { "id" : 2,

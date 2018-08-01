@@ -1,0 +1,48 @@
+{
+  "targets": {
+    "ecran1": {
+      "target1": {
+        "id": 0,
+        "name": "ordinateur",
+        "desc": "info news",
+        "coordonnées": {
+          "x": 45,
+          "y": 51
+        },
+        "choix": {
+          "choix1": "",
+          "choix2": "",
+          "choix3": ""
+        }
+      },
+      "target2": {
+        "id": 1,
+        "name": "frigo",
+        "desc": "le frigo est quasiment vide, j'irai faire des courses demain.",
+        "coordonnées": {
+          "x": 75,
+          "y": 51
+        },
+        "choix": {
+          "choix1": "",
+          "choix2": "",
+          "choix3": ""
+        }
+      },
+      "target3": {
+        "id": 2,
+        "name": "lit",
+        "desc": "Dormir?",
+        "coordonnées": {
+          "x": 75,
+          "y": 67
+        },
+        "choix": {
+          "choix1": "Oui",
+          "choix2": "Non",
+          "choix3": ""
+        }
+      }
+    }
+  }
+}
