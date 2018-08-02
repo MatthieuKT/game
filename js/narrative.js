@@ -5,7 +5,7 @@ var index = 0;
 
 
 // Call AJAX
-ajaxGet("http://localhost/game/data/intro.json", function (reponse) {
+ajaxGet("http://matthieukt.com/game/data/intro.json", function (reponse) {
   var intro = JSON.parse(reponse);
 
 

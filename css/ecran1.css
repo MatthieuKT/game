@@ -1,24 +1,17 @@
 /* On ne gardera que la color et la position pour tous les .target */
-
-
 .fas {
   color: white;
 }
-#ordi {
+i {
   position: absolute;
-  left: 45%;
-  top: 51%;
 }
-#frigo {
+#dataDisplay {
+  color: red;
   position: absolute;
-  left: 75%;
-  top: 51%;
-}
-#lit {
-  position: absolute;
-  left: 75%;
-  top: 67%;
-}
-#displayData {
-
+  bottom: 5%;
+  left: 50%;
+  font-size: 20px;
+  padding: 20px;
+  border: 1px green dotted;
+  background-color: black;
 }

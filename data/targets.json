@@ -18,7 +18,7 @@
       {
         "id": 1,
         "name": "Frigo",
-        "desc": "le frigo est quasiment vide, j'irai faire des courses demain.",
+        "desc": "Le frigo est quasiment vide, j'irai faire les courses demain.",
         "coordonnees": {
           "x": "75%",
           "y": "51%"
