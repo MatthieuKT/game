@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/testLayout.css">
     <link rel="stylesheet" href="css/ecran1.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -10,17 +10,23 @@
   </head>
   <body>
 
+    <div class="container-fluid">
+
+      <div class="row">
+        <div id="main" class="col-md-12">
+          <img id="bckgrndImg" src="images/task.jpg" class="img-fluid" alt="Responsive image">
+          <!-- <i id="ordi" class="fas fa-bullseye fa-3x"></i>
+          <i id="lit" class="fas fa-bullseye fa-3x"></i>
+          <i id="frigo" class="fas fa-bullseye fa-3x"></i> -->
+
+          <!-- Div de test pour l'affichag edes datas -->
+          <div id="dataDisplay"></div>
+        </div>
+      </div>
+
+    </div> <!-- /container-fluid-->
 
 
- <img id="bckgrndImg" src="images/task.jpg" class="img-fluid" alt="Responsive image">
- <i id="ordi" class="fas fa-bullseye fa-3x"></i>
- <i id="lit" class="fas fa-bullseye fa-3x"></i>
- <i id="frigo" class="fas fa-bullseye fa-3x"></i>
-
- <!-- Div de test pour l'affichag edes datas -->
- <div id="dataDisplay">
-
- </div>
 
 <!-- <div id="background" style="background-image:url('images/task.jpg');">
   <div id="filtreIntro"></div>
@@ -30,10 +36,31 @@
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/ajax.js"></script>
 <script type="text/javascript">
-ajaxGet("http://localhost/game/data/targets.json", function (reponse) {
-  var targets = JSON.parse(reponse);
+ajaxGet("http://matthieukt.com/game/data/targets.json", function (reponse) {
+  var res = JSON.parse(reponse);
 
-  console.log(targets.targets.ecran1);
+
+// Noeud Parent
+var mainElt = document.getElementById("main");
+var targets = res.targets.ecran1;
+
+targets.forEach(function(target) {
+  var iElt = document.createElement("i");
+  iElt.id = target.id;
+  iElt.classList.add("fas");
+  iElt.classList.add("fa-bullseye");
+  iElt.classList.add("fa-3x");
+  var iEltStyle = iElt.style;
+  iEltStyle.position = "absolute";
+  iEltStyle.left = target.coordonnees.x;
+  iEltStyle.top = target.coordonnees.y;
+
+  mainElt.appendChild(iElt);
+});
+  // Création de l'élément i
+    // Ajout des attributs de coordonnées pour chacun (et du css?)
+  // Ajout de la data
+  // Insertion dans le DOM
 
   // targets.forEach(function(target) {
   //   console.log("yo");
