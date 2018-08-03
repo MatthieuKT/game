@@ -34,7 +34,7 @@ ajaxGet("http://matthieukt.com/game/data/intro.json", function (reponse) {
         var key = e.which || e.keyCode;
         if (key === 13) { // on appuye une derniere fois sur entree
           setTimeout(function() {
-            window.location.href = "ecran1.php";
+            window.location.href = "ecran1.php?c=salon";
           }, 500);
         }
       });

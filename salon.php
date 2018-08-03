@@ -10,18 +10,23 @@
   </head>
   <body>
 
-    <div class="container-fluid">
-
-      <div class="row">
-        <div id="main" class="col-md-12">
-          <div id="mainFilter"></div>
-          <img id="bckgrndImg" src="images/task.jpg" class="img-fluid" alt="Responsive image">
-          <!-- Div de test pour l'affichage des datas -->
-          <div id="dataDisplay"></div>
+    <div class="row">
+      <div id="main" class="col-md-12">
+        <div id="mainFilter"></div>
+        <div class="col-md-8 offset-2">
+          <img id="bckgrndImg" src="images/salon.jpg" class="img-fluid" alt="Responsive image">
         </div>
+      <!-- Div de test pour l'affichage des datas -->
+        <div id="dataDisplay"></div>
       </div>
+    </div>
 
-    </div> <!-- /container-fluid-->
+
+    <!-- <audio id="ambiance" controls autoplay>
+     <source src="sounds/ambiance2.ogg" type="audio/ogg">
+     <source src="sounds/ambiance2.mp3" type="audio/mpeg">
+     Your browser does not support the audio tag.
+    </audio> -->
 
     <!-- Fonction initiale du call AJAX -->
     <script src="js/ajax.js"></script>
@@ -30,11 +35,14 @@
     <!-- TODO: Rajouter une condition de vérification de la page -->
     <script src="js/targets.js"></script>
     <script>
-        // Apparition progressive de l'écran
-        $('#mainFilter').fadeOut();
 
-        // Lorsquel'on quittera l'écran
-        // $('#mainFilter').fadeIn();
+
+      // Apparition progressive de l'écran
+      $('#mainFilter').fadeOut();
+
+
+      // Lorsquel'on quittera l'écran
+      // $('#mainFilter').fadeIn();
     </script>
 
 </body>

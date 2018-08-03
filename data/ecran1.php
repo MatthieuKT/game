@@ -29,7 +29,7 @@
 
 
     <script type="text/javascript">
-    ajaxGet("http://localhost/game/data/targets.json", function (reponse) {
+    ajaxGet("http://matthieukt.com/game/data/targets.json", function (reponse) {
       var res = JSON.parse(reponse);
       // Noeud Parent
       var mainElt = document.getElementById("main");

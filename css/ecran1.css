@@ -6,12 +6,11 @@ i {
   position: absolute;
 }
 #dataDisplay {
-  color: red;
+  width: 100%;
+  text-align: center;
+  color: white;
   position: absolute;
-  bottom: 5%;
-  left: 50%;
+  bottom: 0;
   font-size: 20px;
   padding: 20px;
-  border: 1px green dotted;
-  background-color: black;
 }

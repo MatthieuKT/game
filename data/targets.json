@@ -1,48 +1,67 @@
 {
-  "targets": {
-    "ecran1": [
-      {
-        "id": 0,
-        "name": "ordinateur",
-        "desc": "info news",
-        "coordonnees": {
-          "x": "45%",
-          "y": "51%"
-        },
-        "choix": {
-          "ch1": "",
-          "ch2": "",
-          "ch3": ""
+  "targets": [
+    {
+      "salon": [
+        {
+          "id": 0,
+          "name": "fenetre",
+          "desc": "sortir",
+          "coordonnees": {
+            "x": "45%",
+            "y": "51%"
+          },
+          "choix": {
+            "ch1": "",
+            "ch2": "",
+            "ch3": ""
+          }
         }
-      },
-      {
-        "id": 1,
-        "name": "Frigo",
-        "desc": "Le frigo est quasiment vide, j'irai faire les courses demain.",
-        "coordonnees": {
-          "x": "75%",
-          "y": "51%"
+      ],
+
+      "ecran1": [
+        {
+          "id": 0,
+          "name": "ordinateur",
+          "desc": "info news",
+          "coordonnees": {
+            "x": "45%",
+            "y": "51%"
+          },
+          "choix": {
+            "ch1": "",
+            "ch2": "",
+            "ch3": ""
+          }
         },
-        "choix": {
-          "ch1": "",
-          "ch2": "",
-          "ch3": ""
-        }
-      },
-      {
-        "id": 2,
-        "name": "Lit",
-        "desc": "Dormir?",
-        "coordonnees": {
-          "x": "75%",
-          "y": "67%"
+        {
+          "id": 1,
+          "name": "Frigo",
+          "desc": "Le frigo est quasiment vide, j'irai faire les courses demain.",
+          "coordonnees": {
+            "x": "75%",
+            "y": "51%"
+          },
+          "choix": {
+            "ch1": "",
+            "ch2": "",
+            "ch3": ""
+          }
         },
-        "choix": {
-          "ch1": "Oui",
-          "ch2": "Pas encore",
-          "ch3": ""
+        {
+          "id": 2,
+          "name": "Lit",
+          "desc": "Dormir?",
+          "coordonnees": {
+            "x": "75%",
+            "y": "67%"
+          },
+          "choix": {
+            "ch1": "Oui",
+            "ch2": "Pas encore",
+            "ch3": ""
+          }
         }
-      }
-    ]
-}
+      ]
+    }
+  ]
 }

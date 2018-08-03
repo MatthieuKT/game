@@ -14,11 +14,11 @@ include_once "layout_header.php";
 
   </div>
 
-  <!-- <audio id="ambiance" controls autoplay>
+  <audio id="ambiance" controls autoplay>
    <source src="sounds/intro.ogg" type="audio/ogg">
    <source src="sounds/intro.mp3" type="audio/mpeg">
    Your browser does not support the audio tag.
-  </audio> -->
+  </audio>
 
   <!-- JQuery -->
   <script src="js/jquery.js"></script>
