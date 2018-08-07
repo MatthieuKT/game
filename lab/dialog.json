@@ -1,0 +1,12 @@
+{
+  "balcon" : [
+    { "id" : 0,
+      "speaker" : "mere",
+      "texte" : "Hé, viens voir les infos!"
+    },
+    { "id" : 1,
+      "speaker" : "perso",
+      "texte" : "J'arrive"
+    }
+  ]
+}

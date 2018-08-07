@@ -11,10 +11,6 @@ body {
 .bloc {
   display: none;
 }
-#bckgrndImg {
-  width: 1225px;
-  margin-top: 9%;
-}
 /* contient l'image de fond */
 /* #background {
   z-index: -5;

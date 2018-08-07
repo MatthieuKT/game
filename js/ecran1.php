@@ -11,16 +11,16 @@
   <body>
 
     <div class="container-fluid">
+
       <div class="row">
         <div id="main" class="col-md-12">
           <div id="mainFilter"></div>
-          <div class="row"> <!--Div de test-->
-            <img id="bckgrndImg" src="images/task.jpg" class="img-fluid" alt="Responsive image">
-            <!-- Div de test pour l'affichage des datas -->
-            <div id="dataDisplay"></div>
-          </div>
+          <img id="bckgrndImg" src="images/task.jpg" class="img-fluid" alt="Responsive image">
+          <!-- Div de test pour l'affichage des datas -->
+          <div id="dataDisplay"></div>
         </div>
       </div>
+
     </div> <!-- /container-fluid-->
 
     <!-- Fonction initiale du call AJAX -->

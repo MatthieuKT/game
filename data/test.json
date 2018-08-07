@@ -5,14 +5,10 @@
       "name": "fenetre",
       "desc": "Entrer",
       "coordonnees": {
-        "x": "65%",
-        "y": "41%"
+        "x": "63%",
+        "y": "27%"
       },
-      "choix": {
-        "ch1": "",
-        "ch2": "",
-        "ch3": ""
-      }
+      "link" : "salon.php?c=salon"
     }
   ],
       "salon": [

@@ -1,0 +1,31 @@
+{
+  "ecran1" : [
+    { "id" : 0,
+      "speaker" : "mere",
+      "duration" : 2000,
+      "texte" : "Hé, viens voir les infos!"
+    },
+    { "id" : 1,
+      "speaker" : "perso",
+      "duration" : 2000,
+      "texte" : "J'arrive"
+    }
+  ],
+  "salon" : [
+    { "id" : 0,
+      "speaker" : "mere",
+      "duration" : 2000,
+      "texte" : "Tu as vu les infos? ILs vont limiter les retraits à 60e par jour!"
+    },
+    { "id" : 1,
+      "speaker" : "mere",
+      "duration" : 2000,
+      "texte" : "C'est quoi ce truc encore"
+    },
+    { "id" : 0,
+      "speaker" : "perso",
+      "duration" : 2000,
+      "texte" : "purée."
+    }
+  ]
+}

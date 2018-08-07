@@ -1,19 +1,22 @@
 {
-  "chapitre1" : [
+  "ecran1" : [
     { "id" : 1,
-      "perso" : "off",
-      "texte" : "",
-      "date" : ""
+      "perso" : "mere",
+      "texte" : "Hé, viens voir!"
     },
     { "id" : 2,
-      "perso" : "off",
-      "texte" : "aaaaa aa Depuis ils se sont coupés du monde, et l'économie dans le reste du globe s'est mise à chuter",
-      "date" : ""
-    },
-    { "id" : 3,
-      "perso" : "off",
-      "texte" : "wesh wesh couzin, mafia k1k1 !!!",
-      "date" : ""
+      "perso" : "perso",
+      "texte" : "Quoi?"
     }
-  ]
+  ],
+  "salon" : [
+    { "id" : 1,
+      "perso" : "mere",
+      "texte" : "T'es au courant pour les retraits? ils vont limter à 60e par jour"
+    },
+    { "id" : 2,
+      "perso" : "perso",
+      "texte" : "Quoi?"
+    }
+  ],
 }

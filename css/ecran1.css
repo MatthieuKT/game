@@ -4,13 +4,16 @@
 }
 i {
   position: absolute;
+  visibility: hidden;
 }
 #dataDisplay {
-  width: 100%;
+  /* width: 100%; */
   text-align: center;
   color: white;
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   font-size: 20px;
   padding: 20px;
+  background-color: black;
+  border: 2px yellow solid;
 }
