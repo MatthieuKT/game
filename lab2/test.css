@@ -1,0 +1,54 @@
+/* Ce qui concerne le layout */
+body {
+  background-color: black !important;
+}
+#main {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+#mainFilter {
+  z-index: 1;
+  position: absolute;
+  background-color: black;
+  height: 100%;
+  width: 100%
+}
+#container {
+  border: 2px yellow solid;
+}
+audio {
+  visibility: hidden;
+}
+
+/* Ce qui concerne le dialogue */
+#dataDisplay {
+  width: 50%;
+  color: white;
+  height: 4em;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  font-size: 20px;
+  padding: 20px;
+  background-color: grey;
+  /* border: 2px blue solid; */
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Ce qui concerne les targets */
+.action {
+  visibility: hidden;
+  position: absolute;
+  color: white;
+  width: 3.5em;
+}
+.target, .icon{
+  color: white;
+  text-align: center;
+  /* Permet le centrage vertical des icones */
+  height: 3.5em; /* hauteur du parent */
+  line-height: 3.5em; /* hauteur de ligne (identique) */
+  white-space: nowrap; /* interdiction de passer à la ligne */
+}

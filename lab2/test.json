@@ -1,0 +1,17 @@
+{
+  "balcon": [
+    {
+      "id": 0,
+      "desc": "Entrer?",
+      "coordonnees": {
+        "x": "61%",
+        "y": "27%"
+      },
+      "icon" : ["far","fa-circle","fa-3x"],
+      "redirect" : {
+        "link" : "scene2.php?c=salon",
+        "img" : "../images/salon.jpg"
+      }
+    }
+  ]
+}
