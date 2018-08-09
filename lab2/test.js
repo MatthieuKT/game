@@ -26,58 +26,73 @@ ajaxGet("http://localhost/game/lab2/test.json", function (reponse) {
         // construction de la div .action et de ses deux enfants
         var actionElt = document.createElement("div");
         actionElt.classList.add("action");
+
         var targetElt = document.createElement("div");
         targetElt.classList.add("target");
-        var iconElt = document.createElement("div");
-        iconElt.classList.add("icon");
-        actionElt.appendChild(targetElt);
-        actionElt.appendChild(iconElt);
-        mainElt.appendChild(actionElt);
+        var iElt1 = document.createElement('i');
+        iElt1.classList.add('far');
+        iElt1.classList.add('fa-circle');
+        iElt1.classList.add('fa-3x');
 
-        // construction des targets
+        // Application du comportement de lien sur les targets
         var aElt = document.createElement("a");
-        console.log(target.redirect.link);
-        if (target.redirect.link) { // Le lien correspond au target.link
+        aElt.appendChild(iElt1)
+
+        if (target.redirect) { // Le lien correspond au target.link
           aElt.href = target.redirect.link;
         } else {
           aElt.href = "#";
           // On lui attribue la classe des liens désactivés
           aElt.classList.add("lock");
         }
+        targetElt.appendChild(aElt);
 
-        var iElt = document.createElement("i");
+
+        var iconElt = document.createElement("div");
+        iconElt.classList.add("icon");
+
+        actionElt.appendChild(targetElt);
+        actionElt.appendChild(iconElt);
+        mainElt.appendChild(actionElt);
+
+
+        var iElt2 = document.createElement("i");
         // Ajout des classes FontAwesome contenues dans un tableau spécial
-        iElt.classList.add(target.icon[0]);
-        iElt.classList.add(target.icon[1]);
-        iElt.classList.add(target.icon[2]);
-        aElt.appendChild(iElt);
+        iElt2.classList.add(target.icon[0]);
+        iElt2.classList.add(target.icon[1]);
+        iElt2.classList.add(target.icon[2]);
+        iElt2.style.visibility = 'hidden';
+
         // Ajout dynamique des coordonnées
         // IDEA: On pourrait le positionner ailleurs
         var actionStyle = actionElt.style;
         actionStyle.left = target.coordonnees.x;
         actionStyle.top = target.coordonnees.y;
         // Insertion dans la div .target
-        targetElt.appendChild(aElt);
+        iconElt.appendChild(iElt2);
         // Insertion finale dans mainElt
         mainElt.appendChild(actionElt);
+
+
 
 // IDEA: Doit-on placer ce code dans le call AJAX ou plutot dans l'UI/UX?
 
 // repérage des éléments
 targetElt = document.getElementsByClassName('target');
 
+// TODO: insérer d'abord l'icone dans iconElt et au mouseenter/mouseleave
+// jouer sur l'apparition.
+
 // Zoom sur la target au survol
-$(iElt).mouseenter( function() {
-  $(iElt).removeClass("fa-circle").addClass("fa-dot-circle");
-  $(iconElt).html('<i class="far fa-hand-paper fa-2x"></i>')
-  // <i class="fas fa-door-open fa-2x"></i>
-  // <i class="fas fa-search"></i>
+$(iElt1).mouseenter( function() {
+  $(iElt1).removeClass("fa-circle").addClass("fa-dot-circle");
+  $(iElt2).css('visibility', 'visible');
   // displayElt.innerHTML=target.name;
 });
 // Dézoom de la target à la sortie de souris
-$(iElt).mouseleave(function() {
-  $(iElt).removeClass("fa-dot-circle").addClass("fa-circle");
-  $(iconElt).html('')
+$(iElt1).mouseleave(function() {
+  $(iElt1).removeClass("fa-dot-circle").addClass("fa-circle");
+  $(iElt2).css('visibility', 'hidden');
   // displayElt.innerHTML="";
 });
 

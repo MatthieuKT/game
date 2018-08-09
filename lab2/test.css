@@ -36,6 +36,25 @@ audio {
   /* border: 2px blue solid; */
   background-color: rgba(0,0,0,0.8);
 }
+/* Ce qui concerne le dialogue */
+/* #dataDisplay {
+  width: 60%;
+  height: 9em;
+  position: absolute;
+  bottom: 1em;
+  left: 20%;
+  color: white;
+  text-align: left;
+
+
+  background-color: rgba(0,0,0,0.8);
+  font-size: 20px;
+  padding: 20px;
+  background-color: grey; */
+  /* border: 2px blue solid; */
+    /* overflow: hidden; */
+
+/* } */
 
 /* Ce qui concerne les targets */
 .action {

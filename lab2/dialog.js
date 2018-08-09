@@ -3,7 +3,7 @@ var dialogElt = document.getElementById('data');
 // permet de situer l'index du texte
 var iteration = 0;
 
-ajaxGet("http://localhost/game/lab/dialog.json", function (reponse) {
+ajaxGet("http://localhost/game/lab2/dialog.json", function (reponse) {
     var dialog = JSON.parse(reponse);
 
     // Récupère l'URL pour interroger le server
@@ -47,12 +47,17 @@ ajaxGet("http://localhost/game/lab/dialog.json", function (reponse) {
               $('#data').fadeIn(500);
             }
 
+            // Rappel: u sers à déterminer quand le dialogue est fini
             if (u <= value.length-1) {
                u = u +1 ;
                // A la fin du dialogue
                if (u == value.length){ // IDEA: stopper la touche entrée?
                  // On vide la boite de dialogue
                  dialogElt.innerHTML = "";
+                 console.log("on en est là?");
+                 // disparition de la boite de dialogue
+                 $('#dataDisplay').fadeOut();
+                 // Apparition des targets
                  $(".action").css('visibility', 'visible');
                }
             }

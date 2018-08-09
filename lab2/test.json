@@ -7,11 +7,23 @@
         "x": "61%",
         "y": "27%"
       },
-      "icon" : ["far","fa-circle","fa-3x"],
+      "icon" : ["far","fa-hand-paper","fa-2x"],
       "redirect" : {
-        "link" : "scene2.php?c=salon",
-        "img" : "../images/salon.jpg"
+        "link" : "scene2.php?c=scene2",
+        "img" : "../images/scene1.jpg"
       }
+    }
+  ],
+  "scene2": [
+    {
+      "id": 0,
+      "desc": "Regarder encore un peu",
+      "coordonnees": {
+        "x": "69%",
+        "y": "41%"
+      },
+      "icon" : ["fas","fa-glasses","fa-2x"],
+      "textContent" : "La marche blanche.... blablabla"
     }
   ]
 }

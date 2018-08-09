@@ -13,6 +13,12 @@ include_once 'layout_header.php';
       </div>
     </div>
 
+    <!-- Sons d'ambiance -->
+    <audio id="ambiance" controls autoplay>
+     <source src="../../sounds/ambiance1.ogg" type="audio/ogg">
+     <source src="../../sounds/ambiance1.mp3" type="audio/mpeg">
+     Your browser does not support the audio tag.
+    </audio>
 
 
 <?php
