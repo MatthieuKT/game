@@ -1,0 +1,102 @@
+{
+  "balcon" : [
+    { "type" : "replica",
+      "id" : 0,
+      "speaker" : "mere",
+      "texte" : "Hé, viens voir les infos!"
+    },
+    { "type" : "replica",
+      "id" : 1,
+      "speaker" : "perso",
+      "texte" : "J'arrive..."
+    }
+  ],
+  "scene2" : [
+    { "id" : 0,
+      "speaker" : "perso",
+      "texte" : "Dis moi? "
+    },
+    { "id" : 1,
+      "speaker" : "mere",
+      "texte" : "Wesh wesh cousin! Mafia K1K1!!!"
+    },
+    { "id" : 2,
+      "speaker" : "Clarisse Amodia",
+      "texte" : "Bonjour, je suis Clarisse Amodia, voici les titres du journal"
+    },
+    { "id" : 3,
+      "speaker" : "Clarisse Amodia",
+      "texte" : "Les réunions de travail organisées autour des principaux acteurs économiques du pays laissent entrevoir une issue positive. C’est en tout cas ce qu’ont déclaré conjointement le premier ministre et le ministre de l’économie lors d’une conférence de presse après 13h de discussion."
+    },
+    { "id" : 4,
+      "speaker" : "Clarisse Amodia",
+      "texte" : "En marge des ces réunions, les manifestations se poursuivent partout dans le pays. Les revendications concernant la demande de retrait de la limitation des paiements conditionnés aux revenus des ménages."
+    },
+    { "id" : 5,
+      "speaker" : "Clarisse Amodia",
+      "texte" : "Les autorités font état d’un nombre important d’arrestations et de blessés. Les représentants des syndicats de police, reçus par le ministre de l’intérieur, demandent des moyens humains et matériels supplémentaires pour faire face à des manifestations qu’ils qualifient d’historiques de par leur ampleur et la tension qui y règne."
+    },
+    { "id" : 6,
+      "speaker" : "Perso",
+      "texte" : "What we do now...",
+      "choix" : [{"choix1": "Ne t'inquiète pas"},{"choix2" : "Je ne sais pas"}, {"choix3" : "C'est vrai que c'est bizarre"}],
+      "choix1" : [
+        { "speaker" : "mere",
+          "texte" : "Merci fiston"
+        },
+        { "speaker" : "mere",
+          "texte" : "T'es un brave.",
+          "score" : 1
+        }
+      ],
+      "choix2" : [
+        { "speaker" : "mere",
+          "texte" : "Tu sais jamais rien toi."
+        }
+      ],
+      "choix3" : [
+        { "speaker" : "mere",
+          "texte" : "t'as vu ça?"
+        }
+      ]
+    }
+  ],
+  "sceneTest" : [
+    { "type" : "replique",
+      "id" : 0,
+      "speaker" : "mere",
+      "texte" : "Hé, viens voir les infos!"
+    },
+    { "type" : "replique",
+      "id" : 0,
+      "speaker" : "perso",
+      "texte" : "de quoi de quoi ? "
+    },
+    { "type" : "choix",
+      "id" : 6,
+      "speaker" : "Perso",
+      "texte" : "What we do now...",
+      "choix" : [{"choix1": "1: Ne t'inquiète pas"},{"choix2" : "2: Je ne sais pas"}, {"choix3" : "3: C'est vrai que c'est bizarre"}],
+      "choix1" : [
+        { "speaker" : "mere",
+          "texte" : "Merci fiston",
+          "score" : 1
+        }
+      ],
+      "choix2" : [
+        { "speaker" : "mere",
+          "texte" : "Tu sais jamais rien toi."
+        }
+      ],
+      "choix3" : [
+        { "speaker" : "mere",
+          "texte" : "t'as vu ça?"
+        }
+      ]
+    },
+    { "id" : 1,
+      "speaker" : "mere",
+      "texte" : "Wesh wesh cousin! Mafia K1K1!!!"
+    }
+  ]
+}
