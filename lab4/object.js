@@ -1,6 +1,4 @@
 var Dialog = {
-  iteration: 0,
-
   // Initialise le dialogue
   initDialog: function(dialog) {
     this.dialog = dialog;
@@ -8,23 +6,31 @@ var Dialog = {
   },
 
   nextReplica: function() {
-    // Il y a deux types de répliques, les normales et celles incluant des choix
+    dialogElt.textContent = this.dialog[iteration].texte;
+  },
 
-    // Si le dialog.type === "choix"
+  getChoices: function() {
+    dialogElt.textContent = this.dialog[iteration].texte;
+    var listeChoix = this.dialog[iteration].choix;
+    for (var cle in listeChoix) {
+      for (var cle2 in listeChoix[cle]) {
+        var choixElt = document.createElement('button');
+        choixElt.classList.add('choixElt');
+        // On lui donne un attribut data contenant la référence du choix
+        choixElt.setAttribute('data', cle2);
+        choixElt.textContent = listeChoix[cle][cle2];
+        choicesDisplay.appendChild(choixElt);
+        choicesDisplay.innerHTML += "<br>"
+      }
+    }
+  },
 
-    // alors , c'est une réplique normale
-      // tant que currentDialog n'a pas atteint la fin du dialogue
-      if (this.iteration < this.dialog.length-1) {
-        dialogElt.textContent = this.dialog[iteration].texte;
-        iteration = iteration+1;
-      }
-      // Si la fin du dialogue est atteinte
-      else if (iteration === this.dialog.length-1) {
-        // Ce qui signifie la fin du dialogue
-        // 1: On vide la boite de dialogue
-        dialogElt.innerHTML = "";
-        // 2: On rajoute le fadeOut pure js sur dialogElt
-        // 3: On fait apparaître les .action
-      }
+  dialogEnd: function() {
+      // Ce qui signifie la fin du dialogue
+      // 1: On vide la boite de dialogue
+      dialogElt.innerHTML = "";
+      // 2: On rajoute le fadeOut pure js sur dialogElt
+      // 3: On fait apparaître les .action
+      $(".action").css('visibility', 'visible');
   }
 }

@@ -1,3 +1,4 @@
+var choicesDisplay = document.getElementById('choicesDisplay');
 var dialogElt = document.getElementById('data');
 var nextElt = document.getElementById('next');
 // permet de situer l'index du texte
@@ -16,6 +17,7 @@ ajaxGet("http://localhost/game/lab4/dialog.json", function (reponse) {
 
     // Initialisation des variables
     var i = 0, req_index = "";
+    var testObj = Object.create(Dialog);
     // parcourt les ecrans contenus dans la requête
     $.each(dialog, function(index, value){
       // Si l'index correspond au paramètre de la page recherchée dans l'URL
@@ -24,18 +26,25 @@ ajaxGet("http://localhost/game/lab4/dialog.json", function (reponse) {
       if(index === keytofind){ // IDEA: penser à stopper la boucle à ce stade
         req_index = i;
 
-        // TODO: rajouter index en param?
-        var testObj = Object.create(Dialog);
-        testObj.initDialog(value);
-
-
+        if (iteration === 0) {
+          testObj.initDialog(value);
           testObj.nextReplica();
+          iteration = iteration+1;
+        }
 
         nextElt.addEventListener('click', function() {
-          console.log("click");
-          testObj.nextReplica();
-        })
 
+        if (value[iteration].type === "choix") {
+          testObj.getChoices();
+        }
+          if (iteration === value.length) {
+            console.log("fin du dialogue");
+          }
+          else {
+            testObj.nextReplica();
+            iteration = iteration+1;
+          }
+        });
 
             // // Rappel: u sers à déterminer quand le dialogue est fini
             // if (u <= value.length-1) {
@@ -52,6 +61,6 @@ ajaxGet("http://localhost/game/lab4/dialog.json", function (reponse) {
             // }
 
       }; // if index = keytofind
-      i++; // Itère tant que l'index n'est pas égal à keytofind
+      // i++; // Itère tant que l'index n'est pas égal à keytofind
    }); // $.each
 }); // AJAX call
