@@ -73,10 +73,11 @@ ajaxGet("http://localhost/game/lab3/dialog.json", function (reponse) {
                       var choix = value[iteration].choix1;
                       choix.forEach(function(aaa){
                         dialogElt.textContent = aaa.texte
+
+                        // sortie du choix et retour au fil du dialogue
                         document.addEventListener("keydown", function(e){
                           var keydown = e.which || e.keyCode;
-                          if (keydown === 13) {
-                            // sortie du choix et retour au fil du dialogue
+                          if (keydown === 13) {                            
                             iteration = iteration+1;
                             dialogElt.textContent = value[iteration].texte;
                           }

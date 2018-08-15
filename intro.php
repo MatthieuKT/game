@@ -27,7 +27,7 @@ include_once "layout_header.php";
   <!-- Narration -->
   <script type="text/javascript" src="js/narrative.js"></script>
 
- <?php
- // include footer
- include_once "layout_footer.php";
-  ?>
+<?php
+// include footer
+include_once "layout_footer.php";
+?>

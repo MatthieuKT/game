@@ -1,66 +1,105 @@
 var choicesDisplay = document.getElementById('choicesDisplay');
 var dialogElt = document.getElementById('data');
 var nextElt = document.getElementById('next');
+var nextElt2 = document.getElementById('next2');
 // permet de situer l'index du texte
 var iteration = 0;
 
 ajaxGet("http://localhost/game/lab4/dialog.json", function (reponse) {
-    var dialog = JSON.parse(reponse);
+  var dialog = JSON.parse(reponse);
 
-    // Récupère l'URL pour interroger le server
-    // https://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    // Récupère le paramètre de l'url concernant un écran en particulier
-    var keytofind = url.searchParams.get("c");
+  // Récupère l'URL pour interroger le server
+  // https://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
+  var url_string = window.location.href;
+  var url = new URL(url_string);
+  // Récupère le paramètre de l'url concernant un écran en particulier
+  var keytofind = url.searchParams.get("c");
 
 
-    // Initialisation des variables
-    var i = 0, req_index = "";
-    var testObj = Object.create(Dialog);
-    // parcourt les ecrans contenus dans la requête
-    $.each(dialog, function(index, value){
-      // Si l'index correspond au paramètre de la page recherchée dans l'URL
-      // IDEA: Ici on pourrait placer l'URL de l'image à insérer dans le mainElt
+  // Initialisation des variables
+  var i = 0, req_index = "";
+  var testObj = Object.create(Dialog);
+  // parcourt les ecrans contenus dans la requête
+  $.each(dialog, function(index, value){
+    // Si l'index correspond au paramètre de la page recherchée dans l'URL
+    // IDEA: Ici on pourrait placer l'URL de l'image à insérer dans le mainElt
 
-      if(index === keytofind){ // IDEA: penser à stopper la boucle à ce stade
-        req_index = i;
+    if(index === keytofind){ // IDEA: penser à stopper la boucle à ce stade
+      req_index = i;
 
-        if (iteration === 0) {
-          testObj.initDialog(value);
-          testObj.nextReplica();
-          iteration = iteration+1;
-        }
+      if (iteration === 0) {
+        testObj.initDialog(value);
+        testObj.getReplica();
+        iteration = iteration+1;
+      }
 
-        nextElt.addEventListener('click', function() {
 
-        if (value[iteration].type === "choix") {
-          testObj.getChoices();
-        }
-          if (iteration === value.length) {
-            console.log("fin du dialogue");
+
+
+
+
+nextElt.addEventListener('click', function() {
+  console.log("length: " + value.length);
+  console.log("iteration: " + iteration);
+
+  // Si l'on a atteint la fin du dialogue
+    if (iteration === value.length-1) {
+    console.log("the end");
+    testObj.dialogEnd();
+    }
+
+  // Si c'est une réplique normale
+  else if (value[iteration].type === "replique"){
+    testObj.getReplica();
+    iteration = iteration+1;
+    console.log(iteration);
+  }
+
+    else if (value[iteration].type === "choix") {
+      // TODO: itérer directement?
+    testObj.getChoices();
+    // disparition du bouton next lors du choix
+    nextElt.style.display = 'none';
+    // Lors du choix du dialogue
+
+    $('.choixElt').on('click', function(e) {
+      e.stopPropagation();
+      var data = $(this).attr('data');
+      if (data === "choix1") {
+        choicesDisplay.style.display = 'none';
+        // initialise le compteur de reliques contenu dans le choix en question
+        var a = 0;
+        dialogElt.textContent = value[iteration].choix1[a][1];
+        a = a+1;
+        nextElt2.style.visibility = "visible";
+
+        $('#next2').on('click', function() {
+          if (a < value[iteration].choix1.length) {
+            dialogElt.textContent = value[iteration].choix1[a][1];
+            a = a+1;
           }
-          else {
-            testObj.nextReplica();
+          // TODO: sortie du choix
+          else if (a === value[iteration].choix1.length) {
+            nextElt2.style.visibility = "hidden";
+            // On passe au noeud suivant
+            nextElt.style.display = '';
+            testObj.getReplica();
             iteration = iteration+1;
+            console.log("fin du choix!");
+            console.log(iteration);
           }
         });
+      }
+    }); // choixElt onclick
+  }// if value.type === "choix"
 
-            // // Rappel: u sers à déterminer quand le dialogue est fini
-            // if (u <= value.length-1) {
-            //    u = u +1 ;
-            //    // A la fin du dialogue
-            //    if (u == value.length){ // IDEA: stopper la touche entrée?
-            //      // On vide la boite de dialogue
-            //      dialogElt.innerHTML = "";
-            //      // disparition de la boite de dialogue
-            //      $('#dataDisplay').fadeOut();
-            //      // Apparition des targets
-            //      $(".action").css('visibility', 'visible');
-            //    }
-            // }
 
-      }; // if index = keytofind
-      // i++; // Itère tant que l'index n'est pas égal à keytofind
-   }); // $.each
+
+}); // Au click du bouton next
+
+
+
+}; // if index = keytofind
+// i++; // Itère tant que l'index n'est pas égal à keytofind
+}); // $.each
 }); // AJAX call

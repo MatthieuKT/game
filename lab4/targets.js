@@ -1,4 +1,4 @@
-ajaxGet("http://localhost/game/lab2/test.json", function (reponse) {
+ajaxGet("http://localhost/game/lab4/test.json", function (reponse) {
 
   // Stockage des données JSON dans une variable JS
   var targets = JSON.parse(reponse);

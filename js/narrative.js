@@ -1,14 +1,10 @@
 // Les noeuds de la page
 var narrativeElt = document.getElementById("narrative");
 var index = 0;
-// texte suivant
-
 
 // Call AJAX
 ajaxGet("http://matthieukt.com/game/data/intro.json", function (reponse) {
   var intro = JSON.parse(reponse);
-
-
 
   narrativeElt.innerHTML = intro.intro[index].texte;
   // Ux apparition progressive du texte
@@ -39,6 +35,5 @@ ajaxGet("http://matthieukt.com/game/data/intro.json", function (reponse) {
         }
       });
     }
-
   });
 });

@@ -5,7 +5,7 @@ var Dialog = {
     this.dialogLength = dialog.length;
   },
 
-  nextReplica: function() {
+  getReplica: function() {
     dialogElt.textContent = this.dialog[iteration].texte;
   },
 
@@ -25,11 +25,42 @@ var Dialog = {
     }
   },
 
+  choix1Display: function() {
+    // 1: disparition de choixdisplay
+    choicesDisplay.style.display = 'none';
+    // 2 : Apparition du texte et du bouton next
+    this.dialog[iteration].choix1.forEach(function(z){
+      dialogElt.textContent = z.texte;
+    })
+    nextElt.style.display = "";
+  },
+
+  choix2Display: function() {
+    // 1: disparition de choixdisplay
+    choicesDisplay.style.display = 'none';
+    // 2 : Apparition du texte et du bouton next
+    this.dialog[iteration].choix2.forEach(function(z){
+      dialogElt.textContent = z.texte;
+    })
+    nextElt.style.display = "";
+  },
+
+  choix3Display: function() {
+    // 1: disparition de choixdisplay
+    choicesDisplay.style.display = 'none';
+    // 2 : Apparition du texte et du bouton next
+    this.dialog[iteration].choix3.forEach(function(z){
+      dialogElt.textContent = z.texte;
+    })
+    nextElt.style.display = "";
+  },
+
   dialogEnd: function() {
       // Ce qui signifie la fin du dialogue
       // 1: On vide la boite de dialogue
       dialogElt.innerHTML = "";
       // 2: On rajoute le fadeOut pure js sur dialogElt
+      $("#dataDisplay").fadeOut(500);
       // 3: On fait apparaître les .action
       $(".action").css('visibility', 'visible');
   }
