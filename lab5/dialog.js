@@ -29,67 +29,57 @@ ajaxGet("http://localhost/game/lab4/dialog.json", function (reponse) {
 
       if (iteration === 0) {
         testObj.initDialog(value);
-        testObj.getReplica();
+        dialogElt.textContent = value[0].texte;
         iteration = iteration+1;
-        console.log("iteration initiale:  " + iteration);
       }
 
+
 nextElt.addEventListener('click', function() {
-  console.log("length: " + value.length);
-  console.log("iteration: " + iteration);
 
   // Si l'on a atteint la fin du dialogue
-    if (iteration === value.length) {
+  if (iteration === value.length-1) {
     console.log("the end");
     testObj.dialogEnd();
-    }
+  }
 
   // Si c'est une réplique normale
   else if (value[iteration].type === "replique"){
-    testObj.getReplica();
     iteration = iteration+1;
-    console.log("réplique: " + iteration);
+    dialogElt.textContent = value[iteration].texte;
+
   }
 
     else if (value[iteration].type === "choix") {
-      // TODO: itérer directement?
+      nextElt.style.display = 'none';
+      dialogElt.textContent = value[iteration].texte;
+      testObj.getChoices();
 
-    testObj.getChoices();
-    // disparition du bouton next lors du choix
-    nextElt.style.display = 'none';
-    // Lors du choix du dialogue
+      var a = 0;
+      $('.choixElt').on('click', function(e) {
+        e.stopPropagation();
+        var data = $(this).attr('data');
+        if (data === "choix1") {
+          nextElt2.style.visibility = "visible";
+          choicesDisplay.style.display = 'none';
+          // initialise le compteur de repliques contenu dans le choix en question
+          dialogElt.textContent = value[iteration].choix1[a][1];
+          a = a+1;
+        }
+      });
 
-    $('.choixElt').on('click', function(e) {
-      e.stopPropagation();
-      var data = $(this).attr('data');
-      if (data === "choix1") {
-        choicesDisplay.style.display = 'none';
-        // initialise le compteur de repliques contenu dans le choix en question
-        var a = 0;
-        dialogElt.textContent = value[iteration].choix1[a][1];
-        a = a+1;
-        nextElt2.style.visibility = "visible";
-
-        $('#next2').on('click', function() {
-          if (a < value[iteration].choix1.length) {
-            dialogElt.textContent = value[iteration].choix1[a][1];
-            a = a+1;
-          }
-          // TODO: sortie du choix
-          else if (a === value[iteration].choix1.length) {
-            nextElt2.style.visibility = "hidden";
-            // On passe au noeud suivant
-            nextElt.style.display = '';
-
-            iteration = iteration+1;
-            testObj.getReplica();
-            console.log("fin du choix!");
-            console.log("iteration à la fin du choix: " + iteration);
-          }
-        });
-      }
-    }); // choixElt onclick
-    // TODO: getReplica?
+      $('#next2').on('click', function() {
+        if (a < value[iteration].choix1.length) {
+          dialogElt.textContent = value[iteration].choix1[a][1];
+          a = a+1;
+        }
+        else if (a === value[iteration].choix1.length) {
+          nextElt2.style.visibility = "hidden";
+          // On passe au noeud suivant
+          nextElt.style.display = '';
+          iteration = iteration+1;
+          dialogElt.textContent = value[iteration].texte;
+        }
+      });
   }// if value.type === "choix"
 
 
