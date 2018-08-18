@@ -38,7 +38,6 @@ nextElt.addEventListener('click', function() {
 
   // Si l'on a atteint la fin du dialogue
   if (iteration === value.length-1) {
-    console.log("the end");
     testObj.dialogEnd();
   }
 
@@ -64,26 +63,67 @@ nextElt.addEventListener('click', function() {
           // initialise le compteur de repliques contenu dans le choix en question
           dialogElt.textContent = value[iteration].choix1[a][1];
           a = a+1;
-        }
-      });
 
-      $('#next2').on('click', function() {
-        if (a < value[iteration].choix1.length) {
-          dialogElt.textContent = value[iteration].choix1[a][1];
+          $('#next2').on('click', function() {
+            if (a < value[iteration].choix1.length) {
+              dialogElt.textContent = value[iteration].choix1[a][1];
+              a = a+1;
+            }
+            else if (a === value[iteration].choix1.length) {
+              nextElt2.style.visibility = "hidden";
+              // On passe au noeud suivant
+              nextElt.style.display = '';
+              iteration = iteration+1;
+              dialogElt.textContent = value[iteration].texte;
+            }
+          });
+        }// choix1
+
+        else if (data === "choix2") {
+          nextElt2.style.visibility = "visible";
+          choicesDisplay.style.display = 'none';
+          // initialise le compteur de repliques contenu dans le choix en question
+          dialogElt.textContent = value[iteration].choix2[a][1];
           a = a+1;
-        }
-        else if (a === value[iteration].choix1.length) {
-          nextElt2.style.visibility = "hidden";
-          // On passe au noeud suivant
-          nextElt.style.display = '';
-          iteration = iteration+1;
-          dialogElt.textContent = value[iteration].texte;
-        }
-      });
+
+          $('#next2').on('click', function() {
+            if (a < value[iteration].choix2.length) {
+              dialogElt.textContent = value[iteration].choix2[a][1];
+              a = a+1;
+            }
+            else if (a === value[iteration].choix2.length) {
+              nextElt2.style.visibility = "hidden";
+              // On passe au noeud suivant
+              nextElt.style.display = '';
+              iteration = iteration+1;
+              dialogElt.textContent = value[iteration].texte;
+            }
+          });
+        }// choix2
+
+        else if (data === "choix3") {
+          nextElt2.style.visibility = "visible";
+          choicesDisplay.style.display = 'none';
+          // initialise le compteur de repliques contenu dans le choix en question
+          dialogElt.textContent = value[iteration].choix3[a][1];
+          a = a+1;
+
+          $('#next2').on('click', function() {
+            if (a < value[iteration].choix3.length) {
+              dialogElt.textContent = value[iteration].choix3[a][1];
+              a = a+1;
+            }
+            else if (a === value[iteration].choix3.length) {
+              nextElt2.style.visibility = "hidden";
+              // On passe au noeud suivant
+              nextElt.style.display = '';
+              iteration = iteration+1;
+              dialogElt.textContent = value[iteration].texte;
+            }
+          });
+        }// choix3
+      }); //choixElt click
   }// if value.type === "choix"
-
-
-
 }); // Au click du bouton next
 
 
